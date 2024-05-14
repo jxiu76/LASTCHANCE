@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
-public class GamePanel extends JPanel implements Runnable, KeyListener{
+public class GameCanvas extends JPanel implements Runnable, KeyListener{
 	
 	/**
 	 * 
@@ -73,7 +73,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	private long slowElapsed;
 	
 	//Constructor
-	public GamePanel(){
+	public GameCanvas(){
 		super();
 		
 		//background Color Set
