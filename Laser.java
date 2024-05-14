@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 
 public class Laser {
 	
-	private Player player  = GamePanel.player;
+	private Player player  = GameCanvas.player;
 	
 	private int x;
 	private int y;

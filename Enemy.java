@@ -176,7 +176,7 @@ public class Enemy {
 		}
 		//Coordinates Set
 		if(setXY){
-	 	    x = (Math.random()*GamePanel.WIDTH-(4*r)) + 2*r;
+	 	    x = (Math.random()*GameCanvas.WIDTH-(4*r)) + 2*r;
 	    	y = -r; 
 		}
 		//Vector Components Set
@@ -231,8 +231,8 @@ public class Enemy {
 		if(type == 1 && rank ==  1) health = 1;
 		if(x < r && dx < 0) dx = -dx;
 		if(y < r && dy < 0) dy = -dy;
-		if(x > GamePanel.WIDTH-r && dx > 0) dx = -dx;
-		if(y > GamePanel.HEIGHT-r && dy > 0) dy = -dy;
+		if(x > GameCanvas.WIDTH-r && dx > 0) dx = -dx;
+		if(y > GameCanvas.HEIGHT-r && dy > 0) dy = -dy;
 		
 		if(health > 1){
 

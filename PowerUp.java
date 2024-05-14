@@ -82,7 +82,7 @@ public class PowerUp {
 		 y += speed*0.3;
 		else
 		 y += speed;
-		if(y > GamePanel.HEIGHT - r) return true;
+		if(y > GameCanvas.HEIGHT - r) return true;
 		return false;
 		
 	}

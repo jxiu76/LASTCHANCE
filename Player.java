@@ -61,8 +61,8 @@ public class Player {
 	public Player(){
 		
 		//Set initial Coordinates
-		x = GamePanel.WIDTH/2;
-	    y = GamePanel.HEIGHT/2;
+		x = GameCanvas.WIDTH/2;
+	    y = GameCanvas.HEIGHT/2;
 	    
 	    //Set Speed
 	    speed = 6;
@@ -152,8 +152,8 @@ public class Player {
 		y+=dy;
 		if(x < 2) x = 1;
 		if(y < 2) y = 1;
-		if(x > GamePanel.WIDTH - 2*r-3) x = GamePanel.WIDTH - 2*r-3;
-		if(y > GamePanel.HEIGHT - 2*r-3) y = GamePanel.HEIGHT - 2*r-3;
+		if(x > GameCanvas.WIDTH - 2*r-3) x = GameCanvas.WIDTH - 2*r-3;
+		if(y > GameCanvas.HEIGHT - 2*r-3) y = GameCanvas.HEIGHT - 2*r-3;
 		dx=0;
 		dy=0;
 		if(firing){
@@ -161,15 +161,15 @@ public class Player {
 			long elapsed = (System.nanoTime() - firingTimer)/1000000;
 			if(elapsed > firingDelay){
 				firingTimer = System.nanoTime();
-				if(powerLevel < 2) GamePanel.bullets.add(new Bullet(270, x, y));
+				if(powerLevel < 2) GameCanvas.bullets.add(new Bullet(270, x, y));
 				else if(powerLevel < 4){
-					GamePanel.bullets.add(new Bullet(270, x + 5, y));
-				    GamePanel.bullets.add(new Bullet(270, x - 5, y));
+					GameCanvas.bullets.add(new Bullet(270, x + 5, y));
+				    GameCanvas.bullets.add(new Bullet(270, x - 5, y));
 				}
 				else{
-					GamePanel.bullets.add(new Bullet(270, x, y));
-					GamePanel.bullets.add(new Bullet(280, x + 5, y));
-				    GamePanel.bullets.add(new Bullet(265, x - 5, y));
+					GameCanvas.bullets.add(new Bullet(270, x, y));
+					GameCanvas.bullets.add(new Bullet(280, x + 5, y));
+				    GameCanvas.bullets.add(new Bullet(265, x - 5, y));
 				}
 			}
 		}
@@ -184,7 +184,7 @@ public class Player {
 	
 	public void draw(Graphics2D g){
 		
-		if(!recovering && !GamePanel.player.isOver()){
+		if(!recovering && !GameCanvas.player.isOver()){
 
 			g.setStroke(new BasicStroke(2));
 			g.setColor(playerColor);
@@ -195,7 +195,7 @@ public class Player {
 			
 		}else{
 			long elapsed = (System.nanoTime() - switchTimer)/1000000;
-			if(elapsed > 50 || GamePanel.player.isOver()){
+			if(elapsed > 50 || GameCanvas.player.isOver()){
 
 				g.setStroke(new BasicStroke(3));
 				g.setColor(Color.WHITE);

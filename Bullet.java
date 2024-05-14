@@ -57,7 +57,7 @@ public class Bullet {
 		x+= dx;
 		y+= dy;
 		//Return Condition of out of Frame
-		if(x > GamePanel.WIDTH-r || y > GamePanel.HEIGHT-r || x < -r || y < -r) return true;
+		if(x > GameCanvas.WIDTH-r || y > GameCanvas.HEIGHT-r || x < -r || y < -r) return true;
 		//Return Default
 		return false;
 		
